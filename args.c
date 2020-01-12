@@ -19,7 +19,7 @@
  * ------------------------                                                  *
  * Finds the first whitespace (tab or space) in the given string.            *
 \* ------------------------------------------------------------------------- */
-inline char *findspace (char *src)
+char findspace (char *src)
 {
 	register char *t1;
 	register char *t2;

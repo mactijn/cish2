@@ -17,6 +17,7 @@ typedef struct
 	char **argv;
 } term_arglist;
 
+char findspace (char *);
 int argcount (const char *);
 term_arglist *new_args (void);
 term_arglist *make_args (const char *);
