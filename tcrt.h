@@ -4,5 +4,6 @@
 #include <terminus.h>
 
 const char *terminus_readline (termbuf *, const char *);
+void terminus_updatecrt(termbuf *);
 
 #endif

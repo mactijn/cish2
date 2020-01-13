@@ -1,3 +1,5 @@
 makeinclude
 configure.paths
-conftest.cpp
+platform.h
+*.o
+cish

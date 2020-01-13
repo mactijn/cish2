@@ -1,24 +1,22 @@
-#
-# 
-#
 include makeinclude
 
-OBJS		= args.o \
-		  cmdtree.o \
-		  main.o \
-		  readpass.o \
-		  tcrt.o \
-		  terminus.o \
-		  tgetchar.o
+SRCS   := $(wildcard *.c)
+OBJS   := $(SRCS:.c=.o)
+TARGET := cish
 
-all: cish
+.PHONY: all clean distclean
+
+all: $(TARGET)
 
 clean:
-	rm -f *.o cish
+	rm -f $(OBJS) $(TARGET)
 
-cish: $(OBJS)
-	$(CC) -o cish $(OBJS) $(LIBS)
+distclean: clean
+	rm -f makeinclude platform.h configure.paths
+
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $(OBJS) $(LIBS)
 
 .SUFFIXES: .c .o
-.c.o:
+.c.o: 
 	$(CC) $(CFLAGS) -I. -c $<
